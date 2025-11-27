@@ -8,7 +8,6 @@ export default function Navbar() {
       {/* LEFT */}
       <div className="nav-left">
         <span className="brand">CarHut</span>
-        <h1>Hello</h1>
       </div>
 
       {/* RIGHT */}
