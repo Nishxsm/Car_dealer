@@ -2,6 +2,8 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Featured from "./components/Featured";
 import Brands from "./components/Brands";
+import Testimonial from "./components/Testimonial";
+import Footer from "./components/Footer";
 
 export default function App() {
   return (
@@ -10,7 +12,8 @@ export default function App() {
       <Hero />
       <Brands />
       <Featured />
-      
+      <Testimonial />
+      <Footer />
     </>
   );
 }

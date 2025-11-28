@@ -1,0 +1,78 @@
+.testimonial {
+  padding: 80px 60px;
+  background: #ffffff;
+  margin-top: -40px;
+}
+
+.testimonial-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+/* grid*/
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 22px;
+  padding: 28px;
+  box-shadow: 0px 10px 25px rgba(0,0,0,0.08);
+  transition: 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0px 14px 32px rgba(0,0,0,0.12);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.user-photo {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.rating {
+  font-size: 14px;
+  color: #ffbf00;
+  margin-top: 4px;
+}
+
+.review-text {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #444;
+}
+
+/*/for mobile 1 card per row/*/
+@media (max-width: 768px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.car-bought {
+  font-size: 14px;
+  color: #777;
+  margin-top: -2px;
+  margin-bottom: 6px;
+}

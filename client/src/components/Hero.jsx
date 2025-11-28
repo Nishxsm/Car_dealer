@@ -13,7 +13,7 @@ export default function Hero() {
       <div className="hero-left-overlay">
         <div className="hero-content">
 
-          {/* top section */}
+         
           <div className="hero-top">
             <h1 className="hero-title">
               <span>DONT MISS</span>
@@ -23,7 +23,7 @@ export default function Hero() {
             </h1>
           </div>
 
-          {/* bottom section */}
+      
           <p className="hero-desc">
             Experience the absolute joy of driving the finest cars out there.
           </p>
