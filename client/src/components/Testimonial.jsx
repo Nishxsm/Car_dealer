@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Testimonial.css";
+import "../styles/testimonial.css";
 
 export default function Testimonial() {
   const reviews = [
