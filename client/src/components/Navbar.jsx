@@ -21,7 +21,7 @@ export default function Navbar() {
       <ul className="nav-menu">
         <li>HOME</li>
         <li>CARS</li>
-        <li>ABOUT-US</li>
+        <li>ABOUT</li>
         <li>CONTACT</li>
       </ul>
     </nav>

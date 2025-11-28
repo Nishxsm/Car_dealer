@@ -99,7 +99,7 @@ const cars = [
   return (
     <section className="featured">
       <div className="featured-top">
-        <h2>The Most Searched SUV Cars</h2>
+        <h2>FEATURED CARS</h2>
         <a href="#" className="view-all">View All ↗</a>
       </div>
 

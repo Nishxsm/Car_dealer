@@ -24,7 +24,7 @@ const brands = [
   return (
     <section className="brands-section">
       <div className="brands-top">
-        <h2>Explore Our Premium Brands</h2>
+        <h2>EXPLORE PREMIUM BRANDS</h2>
         <a href="#" className="view-all">Show All Brands ↗</a>
       </div>
 

@@ -1,8 +1,11 @@
 .brands-section {
-  padding: 80px 60px 40px;
+  padding: 80px 60px 150px;
   background: #f5f7fa;
-  
+  position: relative;
+  overflow: visible;
 }
+
+
 
 .brands-top {
   display: flex;
@@ -14,6 +17,7 @@
 .brands-top h2 {
   font-size: 32px;
   font-weight: 700;
+   font-family: "Michroma", sans-serif;
 }
 
 .brands-top .view-all {
