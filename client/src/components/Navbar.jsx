@@ -1,18 +1,29 @@
-import React from "react";
-import "../styles/Navbar.css";
+import React, { useEffect, useState } from "react";
+import "../styles/navbar.css";
 
 export default function Navbar() {
-  return (
-    <nav className="nav">
+  const [scrolled, setScrolled] = useState(false);
 
-      {/* LEFT */}
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
       <div className="nav-left">
         <span className="brand">CarHut</span>
       </div>
 
-      {/* RIGHT */}
-      <div className="nav-right"></div>
-
+      <ul className="nav-menu">
+        <li>HOME</li>
+        <li>CARS</li>
+        <li>ABOUT-US</li>
+        <li>CONTACT</li>
+      </ul>
     </nav>
   );
 }

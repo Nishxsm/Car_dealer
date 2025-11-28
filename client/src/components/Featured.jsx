@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/Featured.css";
+import "../styles/featured.css";
 
 export default function Featured() {
     //the images are placeholders for ui

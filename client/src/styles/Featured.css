@@ -1,9 +1,6 @@
 .featured {
   padding: 80px 60px;
   background: #f5f7fa;
-  border-top-left-radius: 70px;
-  border-top-right-radius: 70px;
-  margin-top: -58px; /* to pull featured sect into herojsx*/
   position: relative;
   padding-bottom: 120px;
   z-index: 5;

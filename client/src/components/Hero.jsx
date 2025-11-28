@@ -1,63 +1,36 @@
 import React from "react";
 import "../styles/hero.css";
-import heroBg from "../assets/images/hero-bg1.jpg";
+import herovideo from "../assets/videos/hero1.mp4";
 
 export default function Hero() {
   return (
-    <section 
-      className="hero"
-      style={{ backgroundImage: `url(${heroBg})` }}
-    >
-      <div className="overlay">
+    <header className="hero">
 
-        <p className="hero-subtext">
-          Shop Online. Pickup Today. It’s Fast, Simple and Easy. Learn More.
-        </p>
+      <video className="hero-video" autoPlay muted loop playsInline>
+        <source src={herovideo} type="video/mp4" />
+      </video>
 
-       
-        <h1 className="hero-title">
-          Fast, Simple and Easy
-        </h1>
+      <div className="hero-left-overlay">
+        <div className="hero-content">
 
-        
-        <div className="tabs">
-          <span className="tab active">All</span>
-          <span className="tab">New</span>
-          <span className="tab">Used</span>
+          {/* top section */}
+          <div className="hero-top">
+            <h1 className="hero-title">
+              <span>DONT MISS</span>
+              <span>OUT ON</span>
+              <span>PREMIUM</span>
+              <span>CARS</span>
+            </h1>
+          </div>
+
+          {/* bottom section */}
+          <p className="hero-desc">
+            Experience the absolute joy of driving the finest cars out there.
+          </p>
+
         </div>
-
-        
-        <div className="search-box">
-
-          <div className="select-item">
-            <select>
-              <option>Any Makes</option>
-            </select>
-          </div>
-
-          <div className="divider"></div>
-
-          <div className="select-item">
-            
-            <select>
-              <option>Any Models</option>
-            </select>
-          </div>
-
-          <div className="divider"></div>
-
-          <div className="select-item">
-            <select>
-              <option>All Prices</option>
-            </select>
-          </div>
-
-          <button className="search-btn">
-             Search
-          </button>
-        </div>
-
       </div>
-    </section>
+
+    </header>
   );
 }
