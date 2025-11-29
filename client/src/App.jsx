@@ -4,6 +4,7 @@ import Featured from "./components/Featured";
 import Brands from "./components/Brands";
 import Testimonial from "./components/Testimonial";
 import Footer from "./components/Footer";
+import Recent from "./components/Recent";
 
 export default function App() {
   return (
@@ -12,6 +13,7 @@ export default function App() {
       <Hero />
       <Brands />
       <Featured />
+      <Recent />
       <Testimonial />
       <Footer />
     </>
