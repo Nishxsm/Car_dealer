@@ -1,0 +1,147 @@
+.emi-section {
+  padding: 80px 60px;
+  background: #fff;
+}
+
+.emi-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 700;
+  font-family: "Michroma", sans-serif;
+  margin-bottom: 50px;
+}
+
+
+.emi-container {
+  font-family: 'Montserrat', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 80px; 
+}
+
+
+.emi-chart-box {
+  width: 420px;
+  height: 420px;
+}
+
+.chart-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14px;
+  font-size: 15px;
+}
+
+
+.dot {
+  display: inline-block;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+}
+.dot.p { background: #d6e4ff; }
+.dot.i { background: #4A6BFF; }
+
+
+.emi-inputs {
+  width: 480px; 
+}
+
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+
+.input-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+
+input[type="range"] {
+  width: 75%;
+  height: 6px;
+  appearance: none;
+  border-radius: 50px;
+
+  background: linear-gradient(
+    to right,
+    #00c853 var(--value, 0%),
+    #e0e0e0 var(--value, 0%)
+  );
+
+  outline: none;
+  cursor: pointer;
+}
+
+
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  background: white;
+  border: 3px solid #00c853;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.input-row p {
+  font-weight: 600;
+  min-width: 110px;
+  text-align: right;
+}
+
+
+.emi-results {
+  margin-top: 25px;
+  background: #f6f7fb;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.emi-results .row {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  font-size: 15px;
+}
+
+.emi-results strong {
+  font-weight: 700;
+}
+
+
+.number-input {
+  width: 110px;
+  padding: 6px 10px;
+  font-size: 15px;
+  font-weight: 600;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  text-align: right;
+  background: #fff;
+}
+.number-input:focus {
+  border-color: #00c853;
+  outline: none;
+}
+
+/*to remove arrows from input*/
+.number-input::-webkit-inner-spin-button,
+.number-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/*to remove arrows from input*/
+.number-input {
+  -moz-appearance: textfield;
+}
