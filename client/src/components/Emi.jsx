@@ -38,7 +38,7 @@ export default function EMI() {
   return (
     <section className="emi-section">
       <h2 className="emi-title">EMI Calculator</h2>
-
+      <div className="emi-box">
       <div className="emi-container">
 
 
@@ -141,6 +141,7 @@ export default function EMI() {
           </div>
 
         </div>
+      </div>
       </div>
     </section>
   );
