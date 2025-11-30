@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import Recent from "./components/Recent";
 import Emi from "./components/Emi";
 
+
 export default function App() {
   return (
     <>
@@ -16,8 +17,10 @@ export default function App() {
       <Featured />
       <Recent />
       <Emi />
+      
       <Testimonial />
       <Footer />
+      
     </>
   );
 }
