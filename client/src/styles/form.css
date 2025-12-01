@@ -1,0 +1,142 @@
+/* FULL PAGE BACKGROUND */
+.contact-container {
+  min-height: 100vh;
+  background: #f9f7f2; /* beige background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+}
+
+/* BIG CARD */
+.contact-card {
+  width: 100%;
+  max-width: 1300px;
+  background: #faf6ef;
+  border-radius: 18px;
+  padding: 40px 50px;
+  display: flex;
+  gap: 60px;
+  box-shadow: 0px 8px 30px rgba(0,0,0,0.10);
+}
+
+/* LEFT IMAGE */
+.contact-container .illustration-section {
+  flex: 1.1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-container .illustration-img {
+  width: 100%;
+  border-radius: 14px;
+  object-fit: cover;
+}
+
+/* RIGHT FORM */
+.contact-container .form-section {
+  flex: 1;
+}
+
+.contact-container .form-title {
+  font-size: 38px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 6px;
+  font-family: "Georgia", serif;
+}
+
+.contact-container .form-subtitle {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 30px;
+  width: 80%;
+  line-height: 1.5;
+}
+
+/* FORM GRID */
+.contact-container .contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-container .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.contact-container .form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-container .form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* INPUTS — NOW SCOPED */
+.contact-container input,
+.contact-container select,
+.contact-container textarea {
+  border: 1px solid #dcdcdc;
+  border-radius: 6px;
+  padding: 14px;
+  font-size: 15px;
+  background: #fff;
+  transition: 0.2s ease;
+}
+
+.contact-container input:focus,
+.contact-container select:focus,
+.contact-container textarea:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239,68,68,0.15);
+  outline: none;
+}
+
+.contact-container textarea {
+  height: 120px;
+  resize: none;
+}
+
+/* Submit Button */
+.contact-container .submit-btn {
+  background: #ef4444;
+  color: white;
+  padding: 14px 26px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 600;
+  width: 180px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.25s ease;
+}
+
+.contact-container .submit-btn:hover {
+  background: #d92020;
+  transform: translateY(-2px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .contact-container .contact-card {
+    flex-direction: column;
+    padding: 30px;
+  }
+
+  .contact-container .form-subtitle {
+    width: 100%;
+  }
+
+  .contact-container .submit-btn {
+    width: 100%;
+  }
+}

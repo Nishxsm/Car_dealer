@@ -82,14 +82,14 @@ export default function Featured() {
 
   return (
     <section className="featured">
-      <div className="featured-top fade-in">
+      <div className="featured-top fade-card">
         <h2>FEATURED CARS</h2>
         <p>PREMIUM CARS THAT ARE BUILT FOR COMFORT, PERFORMANCE AND CONVENIENCE.</p>
       </div>
 
       <div className="car-grid">
         {cars.map((car) => (
-          <div className="car-card fade-in" key={car.id}>
+          <div className="car-card fade-card" key={car.id}>
             <div className="car-img-container">
               <img src={car.img} alt={car.name} className="car-img" />
             </div>

@@ -90,7 +90,7 @@ export default function Recent() {
 
   return (
     <section className="recent">
-      <div className="recent-top fade-in">
+      <div className="recent-top fade-card">
         <h2>RECENTLY ADDED</h2>
         <p>
           CAREFULLY SELECTED VEHICLES THAT COMBINE LUXURY, PERFORMANCE AND MODERN
@@ -100,7 +100,7 @@ export default function Recent() {
 
       <div className="car-grid1">
         {cars.map((car) => (
-          <div className="car-card1 fade-in" key={car.id}>
+          <div className="car-card1 fade-card" key={car.id}>
             <div className="car-img-container1">
               <img src={car.img} alt={car.name} className="car-img1" />
             </div>

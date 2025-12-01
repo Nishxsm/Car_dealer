@@ -6,7 +6,7 @@ import Testimonial from "./components/Testimonial";
 import Footer from "./components/Footer";
 import Recent from "./components/Recent";
 import Emi from "./components/Emi";
-
+import Form from "./components/Form";
 
 export default function App() {
   return (
@@ -17,7 +17,7 @@ export default function App() {
       <Featured />
       <Recent />
       <Emi />
-      
+      <Form />
       <Testimonial />
       <Footer />
       

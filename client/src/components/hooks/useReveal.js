@@ -1,23 +1,22 @@
-//for fadein effect
-
-
 import { useEffect } from "react";
 
 export default function useReveal() {
   useEffect(() => {
-    const elements = document.querySelectorAll(".fade-in");
+    const cards = document.querySelectorAll(".fade-card");
 
     const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((entry) => {
+        entries.forEach((entry, index) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("show");
+            setTimeout(() => {
+              entry.target.classList.add("show");
+            }, index * 150); // stagger effect
           }
         });
       },
       { threshold: 0.2 }
     );
 
-    elements.forEach((el) => observer.observe(el));
+    cards.forEach((el) => observer.observe(el));
   }, []);
 }
