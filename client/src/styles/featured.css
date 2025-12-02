@@ -60,16 +60,17 @@
   border-radius: 12px;
   box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.1);
   overflow: hidden;      
-  transition: 0.25s ease;
+  transition: transform 0.4s ease-out, box-shadow 0.4s ease-out;
   display: flex;
   flex-direction: column;
   height: 460px;
   position: relative;
   z-index: 2;
+  will-change: transform;
 }
 
 .car-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) !important;
   box-shadow: 0px 16px 30px rgba(0, 0, 0, 0.18);
 }
 
@@ -107,7 +108,7 @@
   font-size: 14px;
   color: #555;
   font-family: 'Montserrat', sans-serif;
-  height: 24px;        /* fixed */
+  height: 24px;      
   margin: 6px 0 12px;
 }
 

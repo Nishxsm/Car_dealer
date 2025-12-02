@@ -15,7 +15,7 @@ export default function Navbar() {
   return (
     <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
       <div className="nav-left">
-        <span className="brand">CarHut</span>
+        <span className="brand">Luxe Wheels</span>
       </div>
 
       <ul className="nav-menu">

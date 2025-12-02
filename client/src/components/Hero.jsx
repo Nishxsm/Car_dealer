@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../styles/hero.css";
 import herovideo from "../assets/videos/hero1.mp4";
+import useReveal from "./hooks/useReveal";
 
 export default function Hero() {
+  useReveal();
   const text = "EXPERIENCE THE ABSOLUTE JOY OF DRIVING THE FINEST CARS OUT THERE.";
   const [display, setDisplay] = useState("");
   const [index, setIndex] = useState(0);
@@ -44,7 +46,7 @@ export default function Hero() {
         <div className="hero-content">
 
           <div className="hero-top">
-            <h1 className="hero-title">
+            <h1 className="hero-title fade-card">
               <span>DONT MISS</span>
               <span>OUT ON</span>
               <span>PREMIUM</span>
