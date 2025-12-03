@@ -9,9 +9,9 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <Brands />
       <Featured />
       <Recent />
-      <Brands />
       <Form />
       <Testimonial />
     </>
