@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
+import Cars from "./pages/Cars";
 
 
 export default function App() {
@@ -11,7 +12,7 @@ export default function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cars" element={<PlaceholderPage title="Cars Page Coming Soon" />} />
+        <Route path="/cars" element={<Cars />} />
         <Route path="/about" element={<PlaceholderPage title="About Page Coming Soon" />} />
         <Route path="/contact" element={<PlaceholderPage title="Contact Page Coming Soon" />} />
       </Routes>

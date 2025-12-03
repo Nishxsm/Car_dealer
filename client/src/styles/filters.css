@@ -1,0 +1,39 @@
+.filter-box {
+  margin-bottom: 25px;
+}
+
+.filter-box h3 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.price-values {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.filter-box input[type="range"] {
+  width: 100%;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.price-ranges label,
+.filter-box label {
+  display: block;
+  margin: 6px 0;
+  font-size: 14px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.filter-box input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  font-size: 14px;
+}

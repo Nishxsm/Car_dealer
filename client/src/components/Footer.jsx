@@ -74,7 +74,7 @@ export default function Footer() {
 
 
       <div className="footer-bottom">
-        <p>© 2025 CarHut. All rights reserved.</p>
+        <p>© 2025 Luxe Wheels. All rights reserved.</p>
 
         <div className="footer-links">
           <a href="#">Terms & Conditions</a>

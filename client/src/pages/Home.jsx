@@ -4,6 +4,7 @@ import Recent from "../components/Recent";
 import Brands from "../components/Brands";
 import Testimonial from "../components/Testimonial";
 import Form from "../components/Form";
+import EMI from "../components/Emi";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Brands />
       <Featured />
       <Recent />
+      <EMI />
       <Form />
       <Testimonial />
     </>
