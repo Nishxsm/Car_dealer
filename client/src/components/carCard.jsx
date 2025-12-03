@@ -15,7 +15,7 @@ export default function CarCard({ car }) {
         <div className="car-specs-row">
           <span>🛣 {car.kms}</span>
           <span>⛽ {car.fuel}</span>
-          <span>⚙ {car.transmission}</span>
+          <span>⚙ {car.trans}</span>
         </div>
 
         <div className="car-divider"></div>
