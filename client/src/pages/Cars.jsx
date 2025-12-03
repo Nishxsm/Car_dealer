@@ -9,51 +9,47 @@ export default function Cars() {
     maxPrice: 5000000,
     priceRanges: [],
     fuel: "",
-    brand: "",
+    brands: [],   
   });
-
 
   const filteredCars = carsData.filter((car) => {
 
+    // MAX PRICE
     if (car.price > filters.maxPrice) return false;
 
-
+    // PRICE RANGES
     if (filters.priceRanges.length > 0) {
-      const inRange = filters.priceRanges.some((range) => {
+      const match = filters.priceRanges.some((range) => {
         switch (range) {
-          case "under2":
-            return car.price <= 200000;
-          case "2to3":
-            return car.price >= 200000 && car.price <= 300000;
-          case "3to5":
-            return car.price >= 300000 && car.price <= 500000;
-          case "5to8":
-            return car.price >= 500000 && car.price <= 800000;
-          case "8to10":
-            return car.price >= 800000 && car.price <= 1000000;
-          case "above10":
-            return car.price >= 1000000;
+          case "under2": return car.price <= 200000;
+          case "2to3": return car.price >= 200000 && car.price <= 300000;
+          case "3to5": return car.price >= 300000 && car.price <= 500000;
+          case "5to8": return car.price >= 500000 && car.price <= 800000;
+          case "8to10": return car.price >= 800000 && car.price <= 1000000;
+          case "above10": return car.price >= 1000000;
+          default: return true;
         }
       });
 
-      if (!inRange) return false;
+      if (!match) return false;
     }
 
-  
+    // FUEL
     if (filters.fuel && car.fuel !== filters.fuel) return false;
 
-
-    if (
-      filters.brand &&
-      !car.title.toLowerCase().includes(filters.brand.toLowerCase())
-    )
-      return false;
+    // BRAND (supports multiple)
+    if (filters.brands.length > 0) {
+      const matchBrand = filters.brands.some((b) =>
+        car.title.toLowerCase().includes(b.toLowerCase())
+      );
+      if (!matchBrand) return false;
+    }
 
     return true;
   });
 
   return (
-    <div className="cars-page">
+    <div className="cars-page cars-wrapper">
       <FilterSidebar filters={filters} setFilters={setFilters} />
 
       <div className="cars-list">
