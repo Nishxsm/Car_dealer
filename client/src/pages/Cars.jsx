@@ -14,10 +14,9 @@ export default function Cars() {
 
   const filteredCars = carsData.filter((car) => {
 
-    // MAX PRICE
+
     if (car.price > filters.maxPrice) return false;
 
-    // PRICE RANGES
     if (filters.priceRanges.length > 0) {
       const match = filters.priceRanges.some((range) => {
         switch (range) {
@@ -34,10 +33,10 @@ export default function Cars() {
       if (!match) return false;
     }
 
-    // FUEL
+  
     if (filters.fuel && car.fuel !== filters.fuel) return false;
 
-    // BRAND (supports multiple)
+
     if (filters.brands.length > 0) {
       const matchBrand = filters.brands.some((b) =>
         car.title.toLowerCase().includes(b.toLowerCase())
