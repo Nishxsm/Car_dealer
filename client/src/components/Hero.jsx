@@ -14,7 +14,6 @@ export default function Hero() {
     const speed = deleting ? 40 : 80;
     const timeout = setTimeout(() => {
       if (!deleting) {
-        // typing forward
         if (index < text.length) {
           setDisplay(text.slice(0, index + 1));
           setIndex(index + 1);
@@ -22,7 +21,6 @@ export default function Hero() {
           setTimeout(() => setDeleting(true), 1000);
         }
       } else {
-        
         if (index > 0) {
           setDisplay(text.slice(0, index - 1));
           setIndex(index - 1);
@@ -36,17 +34,23 @@ export default function Hero() {
   }, [index, deleting]);
 
   return (
-    <header className="hero">
-
-      <video className="hero-video" autoPlay muted loop playsInline>
+    <header className="hero" role="banner" aria-label="Hero">
+      <video
+        className="hero-video"
+        autoPlay
+        muted
+        loop
+        playsInline
+        aria-hidden="true"
+        poster="" 
+      >
         <source src={herovideo} type="video/mp4" />
       </video>
 
       <div className="hero-left-overlay">
         <div className="hero-content">
-
           <div className="hero-top">
-            <h1 className="hero-title fade-card">
+            <h1 className="hero-title fade-card" aria-hidden="true">
               <span>DONT MISS</span>
               <span>OUT ON</span>
               <span>PREMIUM</span>
@@ -54,14 +58,12 @@ export default function Hero() {
             </h1>
           </div>
 
-          <p className="hero-desc">
+          <p className="hero-desc" aria-live="polite">
             {display}
-            <span className="cursor">|</span>
+            <span className="cursor" aria-hidden="true">|</span>
           </p>
-
         </div>
       </div>
-
     </header>
   );
 }
