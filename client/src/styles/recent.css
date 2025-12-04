@@ -173,3 +173,74 @@
   margin: 10px auto 14px auto; 
   border-radius: 2px;
 }
+
+
+@media (max-width: 900px) {
+  .recent {
+    padding: 70px 25px 100px;
+  }
+
+  .recent-top h2 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .recent-top p {
+    font-size: 14px;
+    text-align: center;
+    max-width: 340px;
+  }
+
+
+  .car-grid1 {
+    grid-template-columns: 1fr !important;
+    gap: 22px !important;
+  }
+
+  .car-card1 {
+    height: 380px !important;
+    border-radius: 16px;
+  }
+
+  .recent .car-img-container1 {
+    height: 200px !important;
+  }
+
+  .car-title1 {
+    font-size: 17px;
+    height: auto;
+    margin-bottom: 6px;
+  }
+
+  .car-specs-row1 {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .car-price1 {
+    font-size: 20px;
+    margin-bottom: 6px;
+  }
+
+  .view-all-bottom1 {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .recent {
+    padding: 60px 18px 80px;
+  }
+
+  .car-card1 {
+    height: 360px !important;
+  }
+
+  .recent .car-img-container1 {
+    height: 180px !important;
+  }
+
+  .car-title1 {
+    font-size: 16px;
+  }
+}
