@@ -91,12 +91,16 @@ export default function Testimonial() {
 
 
   const getVisibleReviews = () => {
-    const visible = [];
-    for (let i = 0; i < 4; i++) {
-      visible.push(reviews[(currentIndex + i) % reviews.length]);
-    }
-    return visible;
-  };
+  const isMobile = window.innerWidth <= 768;
+  const count = isMobile ? 1 : 4;
+
+  const visible = [];
+  for (let i = 0; i < count; i++) {
+    visible.push(reviews[(currentIndex + i) % reviews.length]);
+  }
+  return visible;
+};
+
 
   const visibleReviews = getVisibleReviews();
 
@@ -108,32 +112,40 @@ export default function Testimonial() {
       </div>
 
       <div className="carousel-container fade-card">
-        <button onClick={handlePrev} className="arrow-btn arrow-prev" aria-label="Previous">
-          {"<"}
-        </button>
+  
 
-        <div className="testimonial-grid">
-          {visibleReviews.map((r) => (
-            <div key={r.id} className="testimonial-card">
-              <img src={r.photo} alt={r.name} className="user-photo" />
-              
-              <h4 className="user-name">{r.name}</h4>
-              <p className="user-location">{r.location}</p>
-              
-              <div className="rating">
-                {"★".repeat(r.rating)}
-                {r.rating < 5 && <span className="empty-star">{"★".repeat(5 - r.rating)}</span>}
-              </div>
+  <button onClick={handlePrev} className="arrow-btn arrow-prev desktop-arrow">
+    {"<"}
+  </button>
 
-              <p className="review-text">"{r.review}"</p>
-            </div>
-          ))}
+  <div className="testimonial-grid">
+    {visibleReviews.map((r) => (
+      <div key={r.id} className="testimonial-card">
+        <img src={r.photo} alt={r.name} className="user-photo" />
+        <h4 className="user-name">{r.name}</h4>
+        <p className="user-location">{r.location}</p>
+        <div className="rating">
+          {"★".repeat(r.rating)}
+          {r.rating < 5 && <span className="empty-star">{"★".repeat(5 - r.rating)}</span>}
         </div>
-
-        <button onClick={handleNext} className="arrow-btn arrow-next" aria-label="Next">
-          {">"}
-        </button>
+        <p className="review-text">"{r.review}"</p>
       </div>
+    ))}
+  </div>
+
+
+  <button onClick={handleNext} className="arrow-btn arrow-next desktop-arrow">
+    {">"}
+  </button>
+</div>
+
+
+
+<div className="mobile-arrows">
+  <button onClick={handlePrev} className="arrow-btn mobile-arrow">{"<"}</button>
+  <button onClick={handleNext} className="arrow-btn mobile-arrow">{">"}</button>
+</div>
+
     </section>
   );
 }
