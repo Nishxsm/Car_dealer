@@ -1,51 +1,72 @@
 
 .filter-sidebar {
   position: fixed;
-  left: 60px;         
-  top: 120px;         
-  height: calc(100vh - 140px);
-  width: 300px;
+  left: 20px;
+  top: 90px;
+  width: 360px;
+  height: calc(100vh - 110px);
   background: #fff;
-  padding: 24px;
+  padding: 18px;
   border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-  overflow-y: auto;  
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  overflow-y: auto;
   z-index: 10;
 }
 
-
-
-.filter-sidebar::-webkit-scrollbar {
-  width: 7px;
-}
-.filter-sidebar::-webkit-scrollbar-thumb {
-  background: #c4c4c4;
-  border-radius: 10px;
-}
-
-
-.filter-box {
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
+.filters-box {
+  width: 100%;
+  background: #fff;
+  border: 2px solid #e0e0e0;
+  border-radius: 12px;
+  margin-top: 16px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.10);
 }
 
 
-.filter-header {
+.filters-title {
+  font-size: 20px;
+  font-weight: 700;
+  padding: 16px 20px;
+  border-bottom: 2px solid #e0e0e0;
+  background: #fafafa;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.filters-wrapper {
+  padding: 0; 
+}
+
+
+.filter-row {
+  border-bottom: 2px solid #e0e0e0;
+}
+
+.filter-row:last-child {
+  border-bottom: none;
+}
+
+
+.filter-toggle {
+  padding: 14px 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  padding: 8px 0;
+  background: #fafafa;
+  font-size: 16px;
+  font-weight: 500;
 }
 
-.filter-header h3 {
-  font-size: 18px;
-  margin: 0;
+.filter-toggle:hover {
+  background: #f0f0f0;
 }
+
 
 .arrow {
-  transition: transform 0.3s ease;
   font-size: 14px;
+  transition: transform 0.3s ease;
+  font-weight: bold;
 }
 
 .arrow.rotate {
@@ -53,23 +74,24 @@
 }
 
 
-.filter-content {
+.filter-dropdown {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.35s ease, padding 0.25s ease;
-  padding: 0 2px;
+  padding: 0 18px;
+  transition: all 0.35s ease;
 }
 
-.filter-content.open {
-  max-height: 500px;      
-  padding: 10px 2px;
+.filter-dropdown.open {
+  padding: 12px 18px;
+  max-height: 500px;
 }
 
 
-.filter-content label {
+.filter-dropdown label {
   display: block;
   margin: 6px 0;
   font-size: 15px;
+  cursor: pointer;
 }
 
 
@@ -77,14 +99,5 @@
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
-}
-
-input[type="range"] {
-  width: 100%;
-  margin: 5px 0 12px 0;
-}
-
-
-.price-ranges label {
-  margin-bottom: 4px;
+  font-weight: 500;
 }

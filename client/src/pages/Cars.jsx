@@ -9,13 +9,24 @@ export default function Cars() {
     maxPrice: 5000000,
     priceRanges: [],
     fuel: "",
-    brands: [],   
+    brands: [],
+    searchQuery: "",   
   });
 
   const filteredCars = carsData.filter((car) => {
+    if (filters.searchQuery) {
+      const query = filters.searchQuery.toLowerCase();
+      const matchesSearch = 
+        car.title.toLowerCase().includes(query) ||
+        car.fuel?.toLowerCase().includes(query) ||
+        car.transmission?.toLowerCase().includes(query);
+      
+      if (!matchesSearch) return false;
+    }
 
 
     if (car.price > filters.maxPrice) return false;
+
 
     if (filters.priceRanges.length > 0) {
       const match = filters.priceRanges.some((range) => {
@@ -33,7 +44,7 @@ export default function Cars() {
       if (!match) return false;
     }
 
-  
+
     if (filters.fuel && car.fuel !== filters.fuel) return false;
 
 
