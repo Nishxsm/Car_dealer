@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "../styles/cars.css";
 import "../styles/filters.css";
 import SearchBar from "./SearchBar";
+import { useEffect, useRef } from "react";
+
 
 export default function FilterSidebar({ filters, setFilters }) {
   const [open, setOpen] = useState({
@@ -22,6 +24,34 @@ export default function FilterSidebar({ filters, setFilters }) {
     setFilters({ ...filters, priceRanges: updated });
   };
 
+  const sidebarRef = useRef(null);
+
+useEffect(() => {
+  const footer = document.querySelector("footer");
+  const sidebar = sidebarRef.current;
+
+  if (!footer || !sidebar) return;
+
+  const observer = new IntersectionObserver(
+    ([entry]) => {
+      if (entry.isIntersecting) {
+        sidebar.classList.add("sidebar-stop");
+      } else {
+        sidebar.classList.remove("sidebar-stop");
+      }
+    },
+    {
+      root: null,
+      threshold: 0,
+    }
+  );
+
+  observer.observe(footer);
+
+  return () => observer.disconnect();
+}, []);
+
+
   const brandsList = [
     "Maruti Suzuki",
     "Hyundai",
@@ -35,7 +65,8 @@ export default function FilterSidebar({ filters, setFilters }) {
   ];
 
   return (
-  <div className="filter-sidebar">
+  <div className="filter-sidebar" ref={sidebarRef}>
+
 
 
     <SearchBar

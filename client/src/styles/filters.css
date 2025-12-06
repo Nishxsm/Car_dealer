@@ -156,3 +156,9 @@
   background: #dcdcdc;
   border-radius: 4px;
 }
+
+
+.sidebar-stop {
+  position: absolute !important;
+  bottom: 300px;
+}

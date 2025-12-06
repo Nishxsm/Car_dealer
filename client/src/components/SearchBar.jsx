@@ -1,4 +1,5 @@
 import React from "react";
+import { FiSearch } from "react-icons/fi";  
 import "../styles/searchBar.css";
 
 export default function SearchBar({ value, onChange, placeholder = "Search cars..." }) {
@@ -11,7 +12,7 @@ export default function SearchBar({ value, onChange, placeholder = "Search cars.
         onChange={onChange}
         className="search-input"
       />
-      <span className="search-icon">🔍</span>
+      <FiSearch className="search-icon" /> 
     </div>
   );
 }
