@@ -60,7 +60,7 @@ export default function EMI() {
   <input
     type="range"
     min="50000"
-    max="20000000"
+    max="4000000"
     value={loan}
     style={{
       "--value": ((loan - 50000) / (20000000 - 50000)) * 100 + "%"
@@ -73,7 +73,7 @@ export default function EMI() {
     className="number-input"
     value={loan}
     min="50000"
-    max="20000000"
+    max="4000000"
     onChange={(e) => setLoan(Number(e.target.value))}
   />
 </div>
