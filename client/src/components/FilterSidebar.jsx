@@ -7,9 +7,9 @@ import { useEffect, useRef } from "react";
 
 export default function FilterSidebar({ filters, setFilters }) {
   const [open, setOpen] = useState({
-    budget: false,
-    fuel: false,
-    brand: false,
+    budget: true,
+    fuel: true,
+    brand: true,
   });
 
   const toggleSection = (key) => {
