@@ -35,21 +35,54 @@ useEffect(() => {
   const observer = new IntersectionObserver(
     ([entry]) => {
       if (entry.isIntersecting) {
+        const footerTop = footer.getBoundingClientRect().top + window.pageYOffset;
+        const sidebarHeight = sidebar.offsetHeight;
+        const gap = 60; 
+        const stopPosition = footerTop - sidebarHeight - gap;
+        sidebar.style.top = `${stopPosition}px`;
         sidebar.classList.add("sidebar-stop");
       } else {
+        sidebar.style.top = '100px'; 
         sidebar.classList.remove("sidebar-stop");
       }
     },
     {
       root: null,
       threshold: 0,
+      rootMargin: '0px 0px 0px 0px'
     }
   );
-
   observer.observe(footer);
-
   return () => observer.disconnect();
 }, []);
+
+
+
+
+useEffect(() => {
+  const sidebar = sidebarRef.current;
+  if (!sidebar) return;
+
+  let timeout;
+
+  function handleScroll() {
+
+    sidebar.classList.add("scroll-active");
+
+    clearTimeout(timeout);
+
+
+    timeout = setTimeout(() => {
+      sidebar.classList.remove("scroll-active");
+    }, 700);
+  }
+
+  sidebar.addEventListener("scroll", handleScroll);
+
+  return () => sidebar.removeEventListener("scroll", handleScroll);
+}, []);
+
+
 
 
   const brandsList = [
@@ -75,15 +108,22 @@ useEffect(() => {
     />
 
    
-    <div className="filters-box">
-      <div className="filters-title">Filters</div>
-      <div className="filters-wrapper">
+<div className="filters-box">
+  <div className="filters-title">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="7" y1="12" x2="17" y2="12" />
+      <line x1="10" y1="18" x2="14" y2="18" />
+    </svg>
+    Filters
+  </div>
+  <div className="filters-wrapper">
 
         <div className="filter-row">
-          <div className="filter-toggle" onClick={() => toggleSection("budget")}>
-            <span>Budget</span>
-            <span className={open.budget ? "arrow rotate" : "arrow"}>▼</span>
-          </div>
+         <div className="filter-toggle" onClick={() => toggleSection("budget")}>
+         <span>Budget</span>
+         <span className="toggle-icon">{open.budget ? "−" : "+"}</span>
+         </div>
 
           <div className={`filter-dropdown ${open.budget ? "open" : ""}`}>
             <div className="price-values">
@@ -116,8 +156,8 @@ useEffect(() => {
 
         <div className="filter-row">
           <div className="filter-toggle" onClick={() => toggleSection("fuel")}>
-            <span>Fuel Type</span>
-            <span className={open.fuel ? "arrow rotate" : "arrow"}>▼</span>
+          <span>Fuel Type</span>
+          <span className="toggle-icon">{open.fuel ? "−" : "+"}</span>
           </div>
 
           <div className={`filter-dropdown ${open.fuel ? "open" : ""}`}>
@@ -142,9 +182,9 @@ useEffect(() => {
    
         <div className="filter-row">
           <div className="filter-toggle" onClick={() => toggleSection("brand")}>
-            <span>Brands</span>
-            <span className={open.brand ? "arrow rotate" : "arrow"}>▼</span>
-          </div>
+          <span>Brands</span>
+          <span className="toggle-icon">{open.brand ? "−" : "+"}</span>
+        </div>
 
           <div className={`filter-dropdown ${open.brand ? "open" : ""}`}>
             {brandsList.map((brand) => (
