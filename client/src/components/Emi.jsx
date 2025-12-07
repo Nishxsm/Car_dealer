@@ -63,7 +63,7 @@ export default function EMI() {
     max="4000000"
     value={loan}
     style={{
-      "--value": ((loan - 50000) / (20000000 - 50000)) * 100 + "%"
+      "--value": ((loan - 50000) / (4000000 - 50000)) * 100 + "%"
     }}
     onChange={(e) => setLoan(Number(e.target.value))}
   />

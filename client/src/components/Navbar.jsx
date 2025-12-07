@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/navbar.css";
+import logoWhite from "../assets/images/luxewheelslogo.png";
+import logoBlack from "../assets/images/blacklogo.png"; 
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,9 +29,12 @@ export default function Navbar() {
     <>
       <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
         <div className="nav-left">
-          <span className="brand">Luxe Wheels</span>
+          <img 
+            src={scrolled ? logoBlack : logoWhite} 
+            alt="Luxe Wheels" 
+            className="brand-logo" 
+          />
         </div>
-
 
         <ul className="nav-menu">
           <li><Link to="/">HOME</Link></li>
@@ -37,7 +42,6 @@ export default function Navbar() {
           <li><Link to="/about">ABOUT</Link></li>
           <li><Link to="/contact">CONTACT</Link></li>
         </ul>
-
 
         <div
           className={`hamburger ${menuOpen ? "open" : ""}`}
@@ -49,7 +53,6 @@ export default function Navbar() {
         </div>
       </nav>
 
-  
       <div className={`mobile-menu ${menuOpen ? "show" : ""}`}>
         <Link to="/" onClick={() => setMenuOpen(false)}>HOME</Link>
         <Link to="/cars" onClick={() => setMenuOpen(false)}>CARS</Link>

@@ -31,7 +31,7 @@ const brands = [
       <div className="brand-grid">
         {brands.map((b) => (
           <div className="brand-card" key={b.id}>
-            <img src={b.logo} alt={b.name} className="brand-logo" />
+            <img src={b.logo} alt={b.name} className="brands-logo" />
             <p className="brand-name">{b.name}</p>
           </div>
         ))}

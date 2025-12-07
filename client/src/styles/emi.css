@@ -84,7 +84,7 @@ input[type="range"] {
   appearance: none;
   background: linear-gradient(
     to right,
-    #00c853 var(--value),
+    #FEBE10 var(--value),
     #e0e0e0 var(--value)
   );
   cursor: pointer;
@@ -95,7 +95,7 @@ input[type="range"]::-webkit-slider-thumb {
   width: 20px;
   height: 20px;
   background: #fff;
-  border: 3px solid #00c853;
+  border: 3px solid #FEBE10;
   border-radius: 50%;
 }
 
