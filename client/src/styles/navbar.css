@@ -30,14 +30,14 @@
 .brand-logo {
   width: 170px;
   height: auto;
-  margin-left: 0;
+  margin-left: 50px; /* Adjust this value to align with your text */
   object-fit: contain;
   transition: all 0.3s ease;
 }
 
 .nav.scrolled .brand-logo {
   width: 140px;
-  filter: none;
+  margin-left: 50px; /* Keep same alignment when scrolled */
 }
 
 .nav-menu {
@@ -145,11 +145,13 @@
   .brand-logo {
     width: 165px;
     height: auto;
+    margin-left: 0;
   }
 
   .nav.scrolled .brand-logo {
     width: 135px;
-    filter: none;               
+    filter: none;   
+    margin-left: 0;            
   }
 
   .nav-menu {
@@ -170,11 +172,13 @@
   .brand-logo {
     width: 160px;
     height: auto;
+    margin-left: 0;
   }
 
   .nav.scrolled .brand-logo {
     width: 130px;
     filter: none;
+    margin-left: 0;
   }
 
   .nav-menu {
@@ -199,11 +203,13 @@
   .brand-logo {
     width: 145px;
     height: auto;
+    margin-left: 0;
   }
 
   .nav.scrolled .brand-logo {
     width: 120px;
     filter: none;
+    margin-left: 0;
   }
 
   .mobile-menu {
@@ -229,11 +235,13 @@
   .brand-logo {
     width: 130px;
     height: auto;
+    margin-left: 0;
   }
 
   .nav.scrolled .brand-logo {
     width: 110px;
     filter: none;
+    margin-left: 0;
   }
 
   .hamburger {
