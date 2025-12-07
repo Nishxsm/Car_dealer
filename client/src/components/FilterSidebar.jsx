@@ -14,6 +14,9 @@ export default function FilterSidebar({ filters, setFilters, isOpen, onClose }) 
     setOpen((prev) => ({ ...prev, [key]: !prev[key] }));
   };
 
+
+
+
   const togglePriceRange = (value) => {
     const updated = filters.priceRanges.includes(value)
       ? filters.priceRanges.filter((v) => v !== value)
@@ -23,6 +26,8 @@ export default function FilterSidebar({ filters, setFilters, isOpen, onClose }) 
   };
 
   const sidebarRef = useRef(null);
+
+
 
   useEffect(() => {
     if (isOpen && window.innerWidth <= 768) {
@@ -34,6 +39,9 @@ export default function FilterSidebar({ filters, setFilters, isOpen, onClose }) 
       document.body.style.overflow = '';
     };
   }, [isOpen]);
+
+
+
 
   useEffect(() => {
     if (window.innerWidth <= 768) return;
@@ -63,6 +71,9 @@ export default function FilterSidebar({ filters, setFilters, isOpen, onClose }) 
     return () => observer.disconnect();
   }, []);
 
+
+
+
   useEffect(() => {
     const sidebar = sidebarRef.current;
     if (!sidebar) return;
@@ -78,6 +89,10 @@ export default function FilterSidebar({ filters, setFilters, isOpen, onClose }) 
     return () => sidebar.removeEventListener("scroll", handleScroll);
   }, []);
 
+
+
+
+
   useEffect(() => {
     const slider = document.querySelector(".filter-dropdown input[type='range']");
     if (!slider) return;
@@ -85,35 +100,56 @@ export default function FilterSidebar({ filters, setFilters, isOpen, onClose }) 
     slider.style.setProperty("--progress", percent + "%");
   }, [filters.maxPrice]);
 
+
+
+
   useEffect(() => {
   const footer = document.querySelector("footer");
   const sidebar = sidebarRef.current;
-
   if (!footer || !sidebar) return;
+
+  // Function to check if desktop
+  const isDesktop = () => window.innerWidth > 768;
+
+  // Clear inline styles if on mobile
+  if (!isDesktop()) {
+    sidebar.style.top = "";
+    sidebar.classList.remove("sidebar-stop");
+    return;
+  }
 
   const observer = new IntersectionObserver(
     ([entry]) => {
+      // Double check it's still desktop
+      if (!isDesktop()) return;
+      
       if (entry.isIntersecting) {
         const footerTop = footer.getBoundingClientRect().top + window.pageYOffset;
         const sidebarHeight = sidebar.offsetHeight;
-        const gap = 60; 
+        const gap = 60;
         const stopPosition = footerTop - sidebarHeight - gap;
         sidebar.style.top = `${stopPosition}px`;
         sidebar.classList.add("sidebar-stop");
       } else {
-        sidebar.style.top = '100px'; 
+        sidebar.style.top = "100px";
         sidebar.classList.remove("sidebar-stop");
       }
     },
-    {
-      root: null,
-      threshold: 0,
-      rootMargin: '0px 0px 0px 0px'
-    }
+    { root: null, threshold: 0 }
   );
+
   observer.observe(footer);
-  return () => observer.disconnect();
+  return () => {
+    observer.disconnect();
+    // Clean up inline styles when unmounting
+    if (sidebar) {
+      sidebar.style.top = "";
+      sidebar.classList.remove("sidebar-stop");
+    }
+  };
 }, []);
+
+
 
   const brandsList = [
     "Maruti Suzuki", "Hyundai", "Tata", "Mahindra", 
