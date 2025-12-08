@@ -1,0 +1,93 @@
+.business-box {
+  width: 80%;
+  max-width: 1050px;   
+  margin: 10px auto 80px;
+  padding: 40px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+
+.business-top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.business-col {
+  width: 45%;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
+
+.office-title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.label-title {
+  white-space: nowrap;
+}
+
+
+.office-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.office {
+  width: 30%;
+}
+
+.office h4 {
+  margin-bottom: 6px;
+  font-size: 17px;
+}
+
+.office p {
+  color: #555;
+  line-height: 1.5;
+}
+
+@media (max-width: 900px) {
+  .business-top,
+  .office-grid {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .office {
+    width: 100%;
+  }
+}
+
+.label-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.icon {
+  font-size: 18px;
+  color: #ff5722;
+}
+
+.label-title {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.link-text {
+  cursor: pointer;
+  color: #007bff;
+}
+.link-text:hover {
+  text-decoration: underline;
+}

@@ -4,6 +4,8 @@ import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Cars from "./pages/Cars";
 import ScrollToTop from "./components/hooks/ScrollToTop";
+import About from "./pages/About"
+import Contact from "./pages/Contact"
 
 
 export default function App() {
@@ -15,8 +17,8 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/cars" element={<Cars />} />
-        <Route path="/about" element={<PlaceholderPage title="About Page Coming Soon" />} />
-        <Route path="/contact" element={<PlaceholderPage title="Contact Page Coming Soon" />} />
+        <Route path="/about" element={<About/>} />
+        <Route path="/contact" element={<Contact/>} />
       </Routes>
 
       <Footer />
@@ -24,17 +26,3 @@ export default function App() {
   );
 }
 
-function PlaceholderPage({ title }) { //tenporary until other pages are done 
-  return (
-    <div style={{
-      padding: "120px 40px",
-      textAlign: "center",
-      fontFamily: "Montserrat, sans-serif"
-    }}>
-      <h1 style={{ fontSize: "40px", marginBottom: "20px" }}>{title}</h1>
-      <p style={{ fontSize: "18px", opacity: 0.7 }}>
-        This page is under construction.
-      </p>
-    </div>
-  );
-}

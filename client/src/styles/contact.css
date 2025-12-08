@@ -1,0 +1,151 @@
+
+.contact-wrapper {
+  padding: 120px 0 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.contact-title {
+  width: 80%;
+  max-width: 1050px;      
+  text-align: left;         
+  margin: 0 auto 30px;       
+  font-size: 28px;
+  font-weight: 500;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+.contact-box {
+  width: 80%;
+  max-width: 1050px;
+  background: #fff;
+  padding: 40px 50px;
+  border-radius: 12px;
+  border: 1px solid #e6e6e6;
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+
+.contact-left {
+  width: 35%;
+  padding-right: 20px;
+  border-right: 1px solid #eaeaea;
+}
+
+.contact-label {
+  font-size: 14px;
+  color: #555;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.contact-email {
+  font-size: 16px;
+  margin-top: 5px;
+  color: #333;
+}
+
+.email-icon {
+  font-size: 18px;
+  color: #ff5722;
+}
+
+
+
+
+.contact-right {
+  width: 65%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+.contact-right label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 4px; 
+  color: #333;
+}
+
+
+.contact-field {
+  margin-bottom: 18px; 
+}
+
+
+.contact-right input[type="text"],
+.contact-right textarea,
+.contact-right input[type="file"] {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+
+.contact-terms {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+
+.contact-submit {
+  width: 160px;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #ff6a2e;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.contact-submit:hover {
+  background: #e85c22;
+}
+
+
+@media (max-width: 768px) {
+  .contact-box {
+    flex-direction: column;
+    padding: 25px;
+    gap: 30px;
+  }
+  .contact-left {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 15px;
+  }
+ .contact-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+  }
+
+  .contact-submit {
+    width: 160px;
+    margin: 15px auto 0; 
+  }
+}
