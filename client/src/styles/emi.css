@@ -54,8 +54,20 @@
   border-radius: 50%;
   margin-right: 5px;
 }
-.dot.p { background: #d6e4ff; }
-.dot.i { background: #4A6BFF; }
+.dot.p { 
+  background: #d6e4ff; 
+}
+
+.dot.i {
+  background: linear-gradient(
+    to right,
+    #BF953F,
+    #FCF6BA,
+    #B38728,
+    #FBF5B7,
+    #AA771C
+  );
+}
 
 
 .emi-inputs {

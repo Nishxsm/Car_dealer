@@ -116,17 +116,17 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start;
-    padding: 0;              
+    padding:0;
   }
 
   .hero-title {
-    margin-bottom: 0;
+    margin-top: 20px;
   }
 
   .hero-title span {
     font-size: 40px;
     line-height: 1.05;
+    margin-top: 10px;
   }
 
 
@@ -144,4 +144,26 @@
 @media (max-width: 420px) {
   .hero-title span { font-size: 34px; }
   .hero-content { padding-top: 110px; }
+}
+
+
+@media (max-width: 900px) {
+  .hero-title {
+    margin-top: 0px; 
+  }
+
+  .hero-desc {
+    bottom: 100px; 
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 420px) {
+  .hero-title {
+    margin-top: -100px;
+  }
+
+  .hero-desc {
+    bottom: 100px;
+  }
 }

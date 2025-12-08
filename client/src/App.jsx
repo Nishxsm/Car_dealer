@@ -3,12 +3,14 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import Cars from "./pages/Cars";
+import ScrollToTop from "./components/hooks/ScrollToTop";
 
 
 export default function App() {
   return (
     <Router>
       <Navbar />
+      <ScrollToTop />
 
       <Routes>
         <Route path="/" element={<Home />} />

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import "../styles/navbar.css";
 import logoWhite from "../assets/images/luxewheelslogo.png";
-import logoBlack from "../assets/images/blacklogo.png"; 
+// import logoBlack from "../assets/images/blacklogo.png"; 
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -25,12 +25,13 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [location]);
 
+
   return (
     <>
       <nav className={`nav ${scrolled ? "scrolled" : ""}`}>
         <div className="nav-left">
           <img 
-            src={scrolled ? logoBlack : logoWhite} 
+            src={logoWhite} 
             alt="Luxe Wheels" 
             className="brand-logo" 
           />

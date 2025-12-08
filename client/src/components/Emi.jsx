@@ -24,16 +24,34 @@ export default function EMI() {
       maximumFractionDigits: 0,
     }).format(num);
 
-  const chartData = {
-    labels: ["Principal Amount", "Interest Amount"],
-    datasets: [
-      {
-        data: [loan, totalInterest],
-        backgroundColor: ["#d6e4ff", "#4A6BFF"],
-        borderWidth: 0,
+const chartData = {
+  labels: ["Principal Amount", "Interest Amount"],
+  datasets: [
+    {
+      data: [loan, totalInterest],
+      backgroundColor: (context) => {
+        const chart = context.chart;
+        const { ctx, chartArea } = chart;
+
+        if (!chartArea) return ["#d6e4ff", "#BF953F"]; 
+
+        const gradient = ctx.createLinearGradient(
+          chartArea.left, chartArea.top,
+          chartArea.right, chartArea.bottom
+        );
+        gradient.addColorStop(0, "#BF953F");
+        gradient.addColorStop(0.25, "#FCF6BA");
+        gradient.addColorStop(0.5, "#B38728");
+        gradient.addColorStop(0.75, "#FBF5B7");
+        gradient.addColorStop(1, "#AA771C");
+
+        return ["#d6e4ff", gradient]; 
       },
-    ],
-  };
+      borderWidth: 0,
+    },
+  ],
+};
+
 
   return (
     <section className="emi-section">
