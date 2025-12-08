@@ -111,9 +111,14 @@
   padding: 10px 8px;
   line-height: 1.35;
 
-  height: 52px;        
-  overflow: hidden;  
+  height: 52px;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
 }
+
 
 
 .car-specs-row1 {

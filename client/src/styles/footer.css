@@ -87,6 +87,25 @@
   margin: 0 8px;
 }
 
+.footer-logo {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0 10px;
+}
+
+.footer-logo img {
+  width: 170px;
+  height: auto;
+  object-fit: contain;
+  transition: all 0.3s ease;
+}
+
+
+.footer-logo img:hover {
+  opacity: 1;
+}
+
 
 
 

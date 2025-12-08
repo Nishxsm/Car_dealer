@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/footer.css";
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from "react-icons/fa";
+import logoWhite from "../assets/images/luxewheelslogo.png";
 
 export default function Footer() {
   return (
@@ -82,6 +83,10 @@ export default function Footer() {
           <a href="#">Privacy Notice</a>
         </div>
       </div>
+      <div className="footer-logo">
+  <img src={logoWhite} alt="Luxe Wheels Logo" />
+</div>
+
 
     </footer>
   );
